@@ -457,6 +457,8 @@ public:
 
 	bool is_class_enabled(StringName p_class) const;
 
+	void add_resource_base_extension(const StringName &p_extension, const StringName &p_class);
+
 	ClassDB() {}
 	~ClassDB() {}
 };

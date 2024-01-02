@@ -1512,6 +1512,10 @@ bool ClassDB::is_class_enabled(StringName p_class) const {
 	return ::ClassDB::is_class_enabled(p_class);
 }
 
+void ClassDB::add_resource_base_extension(const StringName &p_extension, const StringName &p_class) {
+	::ClassDB::add_resource_base_extension(p_extension, p_class);
+}
+
 void ClassDB::_bind_methods() {
 	::ClassDB::bind_method(D_METHOD("get_class_list"), &ClassDB::get_class_list);
 	::ClassDB::bind_method(D_METHOD("get_inheriters_from_class", "class"), &ClassDB::get_inheriters_from_class);
@@ -1544,6 +1548,8 @@ void ClassDB::_bind_methods() {
 	::ClassDB::bind_method(D_METHOD("class_get_integer_constant_enum", "class", "name", "no_inheritance"), &ClassDB::class_get_integer_constant_enum, DEFVAL(false));
 
 	::ClassDB::bind_method(D_METHOD("is_class_enabled", "class"), &ClassDB::is_class_enabled);
+
+	::ClassDB::bind_method(D_METHOD("add_resource_base_extension", "extension", "class"), &ClassDB::add_resource_base_extension);
 }
 
 } // namespace special
